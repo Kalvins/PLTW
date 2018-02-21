@@ -1,0 +1,42 @@
+#-----------------------------------------------------------------
+x = -9
+y = -9
+import pygame
+import math
+BLACK    = (   0,   0,   0)
+WHITE    = ( 255, 255, 255)
+GREEN    = (   0, 255,   0)
+RED      = ( 255,   0,   0)
+BLUE     = (   0,   0, 255)
+pygame.init()
+
+size = (700, 500)
+screen = pygame.display.set_mode(size)
+
+pygame.display.set_caption("My Game")
+
+done = False
+
+clock = pygame.time.Clock()
+
+# -------- Main Program Loop -----------
+while not done:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True
+
+
+
+
+            screen.fill(BLACK)
+
+    for a in range(100):
+        y = y + 9
+        x = - 9
+        for b in range(100):  
+            x = x + 9
+            pygame.draw.rect(screen, GREEN, [5+x, 5+y, 5, 5])
+
+    pygame.display.flip()
+    clock.tick(60)
+pygame.quit()
